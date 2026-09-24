@@ -3,440 +3,353 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>الحجر آن لائن قرآن اکیڈمی - نماز پلانر</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Sans+Arabic:wght@400;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-:root{
-  --bg:#07111f;
-  --card:#111d31;
-  --card2:#17253d;
-  --border:#29405f;
-  --gold:#f5b942;
-  --gold2:#ffe08a;
-  --teal:#0d9488;
-  --teal2:#2dd4bf;
-  --green:#22c55e;
-  --red:#ef4444;
-  --white:#fff;
-  --muted:#9fb0c7;
-}
-
 *{
   box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:"Noto Sans Arabic",Arial,sans-serif;
 }
 
 body{
-  background:
-    radial-gradient(circle at top,#152746 0%,#07111f 48%,#040a13 100%);
-  color:var(--white);
-  min-height:100vh;
-  padding:15px;
+  margin:0;
+  font-family:Arial,"Noto Nastaliq Urdu",sans-serif;
+  background:linear-gradient(135deg,#eef9ff,#f7fbff);
+  color:#17324d;
 }
 
 .container{
-  width:100%;
-  max-width:900px;
-  margin:auto;
+  width:min(950px,94%);
+  margin:20px auto;
 }
-
-/* HEADER */
 
 .header{
-  background:linear-gradient(135deg,#162640,#0b1526);
-  border:2px solid var(--gold);
-  border-radius:22px;
-  padding:22px 15px;
+  background:linear-gradient(135deg,#063b63,#087ea4);
+  color:white;
   text-align:center;
-  box-shadow:0 10px 35px rgba(0,0,0,.45);
-  margin-bottom:18px;
+  padding:25px 15px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
-.logo{
-  font-size:42px;
-  margin-bottom:4px;
+.header h1{
+  margin:5px 0;
+  font-size:28px;
 }
 
-.academy-en{
-  color:var(--gold2);
-  font-size:1.25rem;
-  font-weight:800;
+.header h2{
+  margin:8px 0;
+  font-size:22px;
 }
 
-.academy-ur{
-  color:var(--gold);
-  font-family:"Amiri",serif;
-  font-size:2rem;
-  font-weight:700;
+.header p{
+  margin:5px 0;
+  font-size:16px;
 }
 
-.subtitle{
-  color:var(--muted);
-  margin-top:5px;
-  font-size:.95rem;
+.card{
+  background:white;
+  margin-top:18px;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,.09);
 }
-
-.teacher{
-  display:inline-block;
-  margin-top:12px;
-  background:rgba(245,185,66,.12);
-  border:1px solid var(--gold);
-  border-radius:30px;
-  padding:7px 18px;
-  color:var(--gold2);
-  font-weight:700;
-}
-
-/* CHILDREN */
 
 .section-title{
   text-align:center;
-  font-size:1.2rem;
-  color:var(--gold2);
-  margin:15px 0 12px;
+  font-size:21px;
+  font-weight:bold;
+  color:#075b79;
+  margin-bottom:15px;
 }
 
 .children{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-bottom:18px;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:10px;
 }
 
 .child-btn{
-  background:var(--card);
-  color:white;
-  border:2px solid var(--border);
-  border-radius:17px;
-  padding:16px 10px;
+  border:2px solid #b9dce9;
+  background:#f3fbff;
+  color:#075b79;
+  padding:13px 8px;
+  border-radius:14px;
   cursor:pointer;
+  font-size:17px;
+  font-weight:bold;
   transition:.2s;
-  font-size:1.05rem;
-  font-weight:800;
 }
 
-.child-btn:hover{
-  border-color:var(--gold);
-  transform:translateY(-2px);
-}
-
+.child-btn:hover,
 .child-btn.active{
-  border-color:var(--gold);
-  background:linear-gradient(135deg,#243a5d,#14253d);
-  box-shadow:0 0 18px rgba(245,185,66,.25);
+  background:#087ea4;
+  color:white;
+  border-color:#087ea4;
 }
 
-.child-icon{
-  display:block;
-  font-size:30px;
-  margin-bottom:5px;
+.add-btn{
+  margin-top:12px;
+  width:100%;
+  border:0;
+  background:linear-gradient(135deg,#168a62,#0b6b4b);
+  color:white;
+  padding:14px;
+  border-radius:14px;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
 }
 
-/* PROFILE */
-
-.profile{
-  background:var(--card);
-  border:2px solid var(--border);
-  border-radius:20px;
-  padding:18px;
-  margin-bottom:18px;
-  text-align:center;
+.delete-btn{
+  margin-top:8px;
+  width:100%;
+  border:0;
+  background:#fff0f0;
+  color:#b42318;
+  padding:11px;
+  border-radius:12px;
+  font-size:15px;
+  cursor:pointer;
 }
 
-.profile-name{
-  font-family:"Amiri",serif;
-  color:var(--gold);
-  font-size:2rem;
-}
-
-.profile-en{
-  color:var(--muted);
-  font-size:.95rem;
+input[type="date"],
+input[type="text"]{
+  width:100%;
+  padding:13px;
+  border:1px solid #c8dce5;
+  border-radius:12px;
+  font-size:16px;
+  margin-top:7px;
 }
 
 .date-box{
-  margin-top:12px;
+  max-width:350px;
+  margin:0 auto;
 }
 
-.date-box label{
+.current-name{
+  text-align:center;
+  color:#075b79;
+  font-size:23px;
+  font-weight:bold;
+  margin:8px 0;
+}
+
+.prayers{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:12px;
+  margin-top:20px;
+}
+
+.prayer{
+  border:2px solid #d5e7ed;
+  background:#f8fcfe;
+  border-radius:16px;
+  padding:18px 8px;
+  cursor:pointer;
+  text-align:center;
+  transition:.2s;
+  user-select:none;
+}
+
+.prayer .icon{
+  font-size:30px;
   display:block;
-  color:var(--muted);
-  font-size:.85rem;
   margin-bottom:5px;
 }
 
-.date-input{
-  width:100%;
-  max-width:300px;
-  background:#081323;
-  border:1px solid var(--border);
-  color:white;
-  border-radius:10px;
-  padding:11px;
-  font-size:1rem;
-  text-align:center;
+.prayer .name{
+  font-size:18px;
+  font-weight:bold;
 }
 
-/* STATS */
+.prayer.done{
+  background:#dff7ea;
+  border-color:#15945f;
+  color:#075b43;
+}
+
+.prayer.done::after{
+  content:" ✓ ادا ہوگئی";
+  display:block;
+  margin-top:6px;
+  font-size:13px;
+  font-weight:bold;
+}
 
 .stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-bottom:18px;
-}
-
-.stat{
-  background:linear-gradient(135deg,#0d9488,#075e59);
-  border-radius:15px;
-  padding:14px 5px;
   text-align:center;
+  margin-top:20px;
 }
 
-.stat-number{
-  font-size:1.8rem;
-  font-weight:800;
-}
-
-.stat-label{
-  font-size:.75rem;
-  color:#d9fffa;
-}
-
-/* PROGRESS */
-
-.progress-box{
-  background:var(--card);
-  border:1px solid var(--border);
-  padding:15px;
-  border-radius:15px;
-  margin-bottom:18px;
-}
-
-.progress-title{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:8px;
-  color:var(--gold2);
-  font-weight:700;
+.count{
+  font-size:30px;
+  font-weight:bold;
+  color:#087ea4;
 }
 
 .progress{
-  width:100%;
-  height:14px;
-  background:#26354c;
+  height:16px;
+  background:#e7eef2;
   border-radius:20px;
   overflow:hidden;
+  margin-top:10px;
 }
 
 .progress-bar{
   height:100%;
   width:0%;
-  background:linear-gradient(90deg,#0d9488,#2dd4bf);
-  transition:.4s;
+  background:linear-gradient(90deg,#087ea4,#16a66d);
+  transition:.3s;
 }
 
-/* PRAYERS */
-
-.prayers{
-  display:flex;
-  flex-direction:column;
-  gap:11px;
-}
-
-.prayer{
-  background:var(--card);
-  border:2px solid var(--border);
-  border-radius:17px;
-  padding:14px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  transition:.2s;
-}
-
-.prayer.done{
-  border-color:var(--green);
-  background:rgba(34,197,94,.12);
-}
-
-.prayer-left{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.prayer-icon{
-  font-size:29px;
-}
-
-.prayer-name{
-  font-size:1.1rem;
-  font-weight:800;
-}
-
-.prayer-ar{
-  display:block;
-  color:var(--gold);
-  font-family:"Amiri",serif;
-  font-size:1.25rem;
-}
-
-.done-btn{
-  border:2px solid var(--border);
-  background:transparent;
-  color:var(--muted);
-  padding:9px 13px;
-  border-radius:30px;
-  cursor:pointer;
-  font-weight:800;
-  white-space:nowrap;
-}
-
-.prayer.done .done-btn{
-  background:var(--green);
-  border-color:var(--green);
-  color:white;
-}
-
-/* HISTORY */
-
-.history{
-  margin-top:20px;
-  background:var(--card);
-  border:2px solid var(--border);
-  border-radius:18px;
-  padding:16px;
-}
-
-.history h3{
+.message{
+  display:none;
   text-align:center;
-  color:var(--gold);
-  margin-bottom:12px;
+  margin-top:18px;
+  padding:15px;
+  border-radius:15px;
+  background:#fff7d6;
+  color:#765600;
+  font-size:20px;
+  font-weight:bold;
 }
-
-.history-item{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:#0b1729;
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:10px;
-  margin-bottom:7px;
-  font-size:.9rem;
-}
-
-.history-score{
-  color:var(--green);
-  font-weight:800;
-}
-
-/* BUTTONS */
 
 .actions{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:10px;
   margin-top:18px;
 }
 
-.action-btn{
+.action{
   border:0;
-  border-radius:14px;
-  padding:14px;
-  font-size:1rem;
-  font-weight:800;
+  padding:13px;
+  border-radius:13px;
   cursor:pointer;
+  font-size:15px;
+  font-weight:bold;
 }
 
 .reset{
-  background:rgba(239,68,68,.12);
-  color:#ff7777;
-  border:2px solid var(--red);
+  background:#fff0f0;
+  color:#b42318;
 }
 
 .print{
-  background:var(--gold);
-  color:#111;
+  background:#eef5ff;
+  color:#1456a0;
 }
 
-/* MESSAGE */
+.history{
+  margin-top:20px;
+}
 
-.success{
-  display:none;
+.history-item{
+  background:#f7fafc;
+  border:1px solid #dce8ee;
+  border-radius:12px;
+  padding:10px;
+  margin-top:8px;
+}
+
+.empty{
   text-align:center;
-  background:linear-gradient(135deg,#f5b942,#d89000);
-  color:#111;
-  border-radius:16px;
-  padding:14px;
-  margin-bottom:16px;
-  font-weight:900;
-  font-size:1.15rem;
-  animation:pulse 1.2s infinite alternate;
-}
-
-@keyframes pulse{
-  from{transform:scale(.99)}
-  to{transform:scale(1.01)}
+  color:#777;
+  padding:10px;
 }
 
 .footer{
   text-align:center;
-  color:#71839c;
-  font-size:.8rem;
-  padding:22px 5px 10px;
+  margin:20px 0;
+  color:#547080;
+  font-size:14px;
 }
 
-/* MOBILE */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  z-index:1000;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal-box{
+  background:white;
+  width:min(450px,100%);
+  border-radius:20px;
+  padding:22px;
+  box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.modal-box h3{
+  text-align:center;
+  color:#075b79;
+  margin-top:0;
+}
+
+.modal-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:15px;
+}
+
+.modal-actions button{
+  border:0;
+  padding:12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.save-name{
+  background:#087ea4;
+  color:white;
+}
+
+.close-modal{
+  background:#eee;
+  color:#333;
+}
 
 @media(max-width:600px){
-
-  .children{
-    grid-template-columns:1fr 1fr;
+  .header h1{
+    font-size:23px;
   }
 
-  .academy-en{
-    font-size:1rem;
+  .header h2{
+    font-size:19px;
   }
 
-  .academy-ur{
-    font-size:1.7rem;
-  }
-
-  .profile-name{
-    font-size:1.7rem;
+  .card{
+    padding:15px;
   }
 
   .prayer{
-    padding:12px 10px;
+    padding:15px 5px;
   }
+}
 
-  .prayer-name{
-    font-size:1rem;
-  }
-
-  .done-btn{
-    padding:8px 9px;
-    font-size:.78rem;
-  }
-
-  .stats{
-    gap:6px;
-  }
-
-  .stat-number{
-    font-size:1.45rem;
-  }
-
+@media print{
+  .no-print,
+  .add-btn,
+  .delete-btn,
   .actions{
-    grid-template-columns:1fr;
+    display:none !important;
+  }
+
+  body{
+    background:white;
+  }
+
+  .card,
+  .header{
+    box-shadow:none;
   }
 }
 </style>
@@ -446,266 +359,145 @@ body{
 
 <div class="container">
 
-  <!-- HEADER -->
   <div class="header">
-    <div class="logo">🕌</div>
-
-    <div class="academy-en">
-      AL HIJR ONLINE QURAN ACADEMY
-    </div>
-
-    <div class="academy-ur">
-      الحجر آن لائن قرآن اکیڈمی
-    </div>
-
-    <div class="subtitle">
-      نماز ٹائم اور حاضری پلانر
-    </div>
-
-    <div class="teacher">
-      👨‍🏫 قاری محمد عبداللہ
-    </div>
+    <div style="font-size:42px;">📖</div>
+    <h1>AL HIJR ONLINE QURAN ACADEMY</h1>
+    <h2>الحجر آن لائن قرآن اکیڈمی</h2>
+    <p>روزانہ پانچ نمازوں کا حاضری پلانر</p>
+    <p>قاری محمد عبداللہ</p>
   </div>
 
+  <div class="card no-print">
+    <div class="section-title">👤 طالب علم / فرد منتخب کریں</div>
 
-  <!-- CHILDREN -->
-  <div class="section-title">
-    👨‍👩‍👧‍👦 بچے کا نام منتخب کریں
+    <div class="children" id="childrenList"></div>
+
+    <button class="add-btn" onclick="openAddName()">
+      ➕ نیا نام شامل کریں
+    </button>
+
+    <button class="delete-btn" onclick="deleteCurrentName()">
+      🗑️ موجودہ نام حذف کریں
+    </button>
   </div>
 
-  <div class="children">
+  <div class="card">
 
-    <button class="child-btn active" onclick="selectChild(0)">
-      <span class="child-icon">👦</span>
-      حمداللہ شاہ
-    </button>
-
-    <button class="child-btn" onclick="selectChild(1)">
-      <span class="child-icon">👦</span>
-      ارسلان شیخ
-    </button>
-
-    <button class="child-btn" onclick="selectChild(2)">
-      <span class="child-icon">👦</span>
-      حفیظ الدین
-    </button>
-
-    <button class="child-btn" onclick="selectChild(3)">
-      <span class="child-icon">👧</span>
-      ہادیہ عبید
-    </button>
-
-  </div>
-
-
-  <!-- SUCCESS -->
-  <div class="success" id="successMessage">
-    🌟 ماشاءاللہ! پانچوں نمازیں مکمل ہوگئیں 🌟
-  </div>
-
-
-  <!-- PROFILE -->
-  <div class="profile">
-
-    <div class="profile-name" id="selectedName">
-      حمداللہ شاہ
-    </div>
-
-    <div class="profile-en">
-      Prayer Record
+    <div class="current-name" id="currentName">
+      نام منتخب کریں
     </div>
 
     <div class="date-box">
+      <label><b>📅 تاریخ منتخب کریں</b></label>
+      <input type="date" id="datePicker" onchange="loadRecord()">
+    </div>
 
-      <label>📅 تاریخ منتخب کریں</label>
+    <div class="prayers">
 
-      <input
-        type="date"
-        id="selectedDate"
-        class="date-input"
-        onchange="loadRecord()"
-      >
+      <div class="prayer" id="fajr" onclick="togglePrayer('fajr')">
+        <span class="icon">🌅</span>
+        <span class="name">فجر</span>
+      </div>
+
+      <div class="prayer" id="dhuhr" onclick="togglePrayer('dhuhr')">
+        <span class="icon">☀️</span>
+        <span class="name">ظہر</span>
+      </div>
+
+      <div class="prayer" id="asr" onclick="togglePrayer('asr')">
+        <span class="icon">🌤️</span>
+        <span class="name">عصر</span>
+      </div>
+
+      <div class="prayer" id="maghrib" onclick="togglePrayer('maghrib')">
+        <span class="icon">🌇</span>
+        <span class="name">مغرب</span>
+      </div>
+
+      <div class="prayer" id="isha" onclick="togglePrayer('isha')">
+        <span class="icon">🌙</span>
+        <span class="name">عشاء</span>
+      </div>
 
     </div>
 
-  </div>
-
-
-  <!-- STATS -->
-  <div class="stats">
-
-    <div class="stat">
-      <div class="stat-number" id="completed">
-        0/5
+    <div class="stats">
+      <div class="count">
+        <span id="doneCount">0</span>/5
       </div>
-      <div class="stat-label">
-        مکمل نمازیں
-      </div>
-    </div>
 
-    <div class="stat">
-      <div class="stat-number" id="remaining">
-        5
+      <div>
+        مکمل نمازیں: <b id="remaining">5</b> باقی
       </div>
-      <div class="stat-label">
-        باقی نمازیں
+
+      <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div style="margin-top:8px;">
+        <b id="percentage">0%</b> مکمل
       </div>
     </div>
 
-    <div class="stat">
-      <div class="stat-number" id="percentage">
-        0%
-      </div>
-      <div class="stat-label">
-        کارکردگی
-      </div>
+    <div class="message" id="mashaAllah">
+      🌟 ماشاءاللہ! آج پانچوں نمازیں مکمل ہیں۔ 🌟
     </div>
 
-  </div>
-
-
-  <!-- PROGRESS -->
-  <div class="progress-box">
-
-    <div class="progress-title">
-      <span>آج کی نمازوں کی حاضری</span>
-      <span id="progressText">0%</span>
-    </div>
-
-    <div class="progress">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-
-  </div>
-
-
-  <!-- PRAYERS -->
-  <div class="prayers">
-
-    <div class="prayer" id="prayer-fajr">
-
-      <div class="prayer-left">
-        <span class="prayer-icon">🌅</span>
-
-        <div>
-          <div class="prayer-name">فجر</div>
-          <span class="prayer-ar">صلاة الفجر</span>
-        </div>
-      </div>
-
-      <button class="done-btn" onclick="togglePrayer('fajr')">
-        نماز ادا کی
+    <div class="actions no-print">
+      <button class="action reset" onclick="resetToday()">
+        🔄 آج کا ریکارڈ صاف کریں
       </button>
 
-    </div>
-
-
-    <div class="prayer" id="prayer-dhuhr">
-
-      <div class="prayer-left">
-        <span class="prayer-icon">☀️</span>
-
-        <div>
-          <div class="prayer-name">ظہر</div>
-          <span class="prayer-ar">صلاة الظهر</span>
-        </div>
-      </div>
-
-      <button class="done-btn" onclick="togglePrayer('dhuhr')">
-        نماز ادا کی
+      <button class="action print" onclick="window.print()">
+        🖨️ رپورٹ پرنٹ کریں
       </button>
-
-    </div>
-
-
-    <div class="prayer" id="prayer-asr">
-
-      <div class="prayer-left">
-        <span class="prayer-icon">🌤️</span>
-
-        <div>
-          <div class="prayer-name">عصر</div>
-          <span class="prayer-ar">صلاة العصر</span>
-        </div>
-      </div>
-
-      <button class="done-btn" onclick="togglePrayer('asr')">
-        نماز ادا کی
-      </button>
-
-    </div>
-
-
-    <div class="prayer" id="prayer-maghrib">
-
-      <div class="prayer-left">
-        <span class="prayer-icon">🌆</span>
-
-        <div>
-          <div class="prayer-name">مغرب</div>
-          <span class="prayer-ar">صلاة المغرب</span>
-        </div>
-      </div>
-
-      <button class="done-btn" onclick="togglePrayer('maghrib')">
-        نماز ادا کی
-      </button>
-
-    </div>
-
-
-    <div class="prayer" id="prayer-isha">
-
-      <div class="prayer-left">
-        <span class="prayer-icon">🌙</span>
-
-        <div>
-          <div class="prayer-name">عشاء</div>
-          <span class="prayer-ar">صلاة العشاء</span>
-        </div>
-      </div>
-
-      <button class="done-btn" onclick="togglePrayer('isha')">
-        نماز ادا کی
-      </button>
-
     </div>
 
   </div>
 
-
-  <!-- HISTORY -->
-  <div class="history">
-
-    <h3>
-      📊 اس بچے کا پچھلا ریکارڈ
-    </h3>
-
-    <div id="historyList">
-      ریکارڈ لوڈ ہو رہا ہے...
-    </div>
-
+  <div class="card">
+    <div class="section-title">📚 پچھلا ریکارڈ</div>
+    <div id="history"></div>
   </div>
-
-
-  <!-- ACTIONS -->
-  <div class="actions">
-
-    <button class="action-btn print" onclick="printReport()">
-      🖨️ رپورٹ پرنٹ کریں
-    </button>
-
-    <button class="action-btn reset" onclick="resetToday()">
-      🔄 آج کا ریکارڈ صاف کریں
-    </button>
-
-  </div>
-
 
   <div class="footer">
-    © Al Hijr Online Quran Academy
-    <br>
-    الحجر آن لائن قرآن اکیڈمی
+    <b>Qari Muhammad Abdullah</b><br>
+    بانی Al Hijr Online Quran Academy
+  </div>
+
+</div>
+
+
+<!-- Add Name Modal -->
+<div class="modal" id="nameModal">
+
+  <div class="modal-box">
+
+    <h3>➕ نیا نام شامل کریں</h3>
+
+    <label>
+      <b>نام لکھیں</b>
+    </label>
+
+    <input
+      type="text"
+      id="newName"
+      placeholder="مثلاً: قاری محمد عبداللہ"
+      maxlength="50"
+    >
+
+    <div class="modal-actions">
+
+      <button class="save-name" onclick="addNewName()">
+        ✅ نام شامل کریں
+      </button>
+
+      <button class="close-modal" onclick="closeAddName()">
+        ❌ واپس جائیں
+      </button>
+
+    </div>
+
   </div>
 
 </div>
@@ -713,18 +505,18 @@ body{
 
 <script>
 
-/* ==========================================
-   CHILDREN
-========================================== */
-
-const children = [
+const defaultNames = [
   "حمداللہ شاہ",
   "ارسلان شیخ",
   "حفیظ الدین",
   "ہادیہ عبید"
 ];
 
-let selectedChild = 0;
+let names = JSON.parse(
+  localStorage.getItem("alhijr_names")
+) || defaultNames;
+
+let currentIndex = 0;
 
 const prayers = [
   "fajr",
@@ -734,110 +526,148 @@ const prayers = [
   "isha"
 ];
 
+function todayDate(){
 
-/* ==========================================
-   DATE
-========================================== */
+  const d = new Date();
 
-const dateInput =
-  document.getElementById("selectedDate");
+  const year = d.getFullYear();
 
-const today = new Date();
+  const month = String(
+    d.getMonth() + 1
+  ).padStart(2,"0");
 
-const localDate =
-  today.getFullYear() + "-" +
-  String(today.getMonth()+1).padStart(2,"0") + "-" +
-  String(today.getDate()).padStart(2,"0");
+  const day = String(
+    d.getDate()
+  ).padStart(2,"0");
 
-dateInput.value = localDate;
-
-
-/* ==========================================
-   SELECT CHILD
-========================================== */
-
-function selectChild(index){
-
-  selectedChild = index;
-
-  document.querySelectorAll(".child-btn")
-    .forEach((btn,i)=>{
-      btn.classList.toggle(
-        "active",
-        i === index
-      );
-    });
-
-  document.getElementById("selectedName")
-    .innerText = children[index];
-
-  loadRecord();
+  return `${year}-${month}-${day}`;
 }
 
 
-/* ==========================================
-   STORAGE KEY
-========================================== */
+document.getElementById("datePicker").value = todayDate();
 
-function getKey(){
+
+function saveNames(){
+
+  localStorage.setItem(
+    "alhijr_names",
+    JSON.stringify(names)
+  );
+}
+
+
+function renderNames(){
+
+  const list =
+    document.getElementById("childrenList");
+
+  list.innerHTML = "";
+
+  names.forEach((name,index)=>{
+
+    const button =
+      document.createElement("button");
+
+    button.className =
+      "child-btn" +
+      (index === currentIndex ? " active" : "");
+
+    button.textContent =
+      name;
+
+    button.onclick = function(){
+
+      currentIndex = index;
+
+      renderNames();
+
+      loadRecord();
+
+    };
+
+    list.appendChild(button);
+
+  });
+
+}
+
+
+function storageKey(){
+
+  const date =
+    document.getElementById("datePicker").value;
 
   return "alhijr_prayer_" +
-    selectedChild + "_" +
-    dateInput.value;
-
+    currentIndex +
+    "_" +
+    date;
 }
 
 
-/* ==========================================
-   LOAD RECORD
-========================================== */
-
-function loadRecord(){
+function getRecord(){
 
   const saved =
-    localStorage.getItem(getKey());
-
-  let record;
+    localStorage.getItem(storageKey());
 
   if(saved){
 
-    record = JSON.parse(saved);
-
-  }else{
-
-    record = {
-      fajr:false,
-      dhuhr:false,
-      asr:false,
-      maghrib:false,
-      isha:false
-    };
+    return JSON.parse(saved);
 
   }
 
+  return {
+    fajr:false,
+    dhuhr:false,
+    asr:false,
+    maghrib:false,
+    isha:false
+  };
+
+}
+
+
+function saveRecord(record){
+
+  localStorage.setItem(
+    storageKey(),
+    JSON.stringify(record)
+  );
+
+}
+
+
+function loadRecord(){
+
+  if(!names.length){
+
+    document.getElementById(
+      "currentName"
+    ).textContent = "کوئی نام موجود نہیں";
+
+    return;
+
+  }
+
+  document.getElementById(
+    "currentName"
+  ).textContent =
+    names[currentIndex];
+
+  const record =
+    getRecord();
+
   prayers.forEach(prayer=>{
 
-    const card =
-      document.getElementById(
-        "prayer-" + prayer
-      );
-
-    const button =
-      card.querySelector(".done-btn");
+    const box =
+      document.getElementById(prayer);
 
     if(record[prayer]){
 
-      card.classList.add("done");
-
-      button.innerText =
-        "✓ ادا ہوگئی";
+      box.classList.add("done");
 
     }else{
 
-      card.classList.remove("done");
-
-      button.innerText =
-        "نماز ادا کی";
+      box.classList.remove("done");
 
     }
 
@@ -845,87 +675,58 @@ function loadRecord(){
 
   updateStats();
 
-  loadHistory();
+  renderHistory();
 
 }
 
 
-/* ==========================================
-   TOGGLE PRAYER
-========================================== */
-
 function togglePrayer(prayer){
 
-  let saved =
-    localStorage.getItem(getKey());
+  if(!names.length){
 
-  let record = saved
-    ? JSON.parse(saved)
-    : {
-        fajr:false,
-        dhuhr:false,
-        asr:false,
-        maghrib:false,
-        isha:false
-      };
+    alert("براہ کرم پہلے ایک نام شامل کریں۔");
+
+    return;
+
+  }
+
+  const record =
+    getRecord();
 
   record[prayer] =
     !record[prayer];
 
-  localStorage.setItem(
-    getKey(),
-    JSON.stringify(record)
-  );
+  saveRecord(record);
 
   loadRecord();
 
 }
 
 
-/* ==========================================
-   STATS
-========================================== */
-
 function updateStats(){
 
-  let completed = 0;
+  const record =
+    getRecord();
 
-  prayers.forEach(prayer=>{
-
-    const card =
-      document.getElementById(
-        "prayer-" + prayer
-      );
-
-    if(card.classList.contains("done")){
-      completed++;
-    }
-
-  });
+  const done =
+    prayers.filter(
+      p => record[p]
+    ).length;
 
   const percentage =
-    Math.round(
-      (completed / 5) * 100
-    );
+    Math.round((done / 5) * 100);
 
   document.getElementById(
-    "completed"
-  ).innerText =
-    completed + "/5";
+    "doneCount"
+  ).textContent = done;
 
   document.getElementById(
     "remaining"
-  ).innerText =
-    5 - completed;
+  ).textContent = 5 - done;
 
   document.getElementById(
     "percentage"
-  ).innerText =
-    percentage + "%";
-
-  document.getElementById(
-    "progressText"
-  ).innerText =
+  ).textContent =
     percentage + "%";
 
   document.getElementById(
@@ -933,113 +734,294 @@ function updateStats(){
   ).style.width =
     percentage + "%";
 
-
   const message =
     document.getElementById(
-      "successMessage"
+      "mashaAllah"
     );
 
-  if(completed === 5){
+  if(done === 5){
 
-    message.style.display =
-      "block";
+    message.style.display = "block";
 
   }else{
 
-    message.style.display =
-      "none";
+    message.style.display = "none";
 
   }
 
 }
 
 
-/* ==========================================
-   HISTORY
-========================================== */
+function openAddName(){
 
-function loadHistory(){
+  document.getElementById(
+    "nameModal"
+  ).style.display = "flex";
 
-  const box =
+  document.getElementById(
+    "newName"
+  ).value = "";
+
+  setTimeout(()=>{
+
     document.getElementById(
-      "historyList"
+      "newName"
+    ).focus();
+
+  },100);
+
+}
+
+
+function closeAddName(){
+
+  document.getElementById(
+    "nameModal"
+  ).style.display = "none";
+
+}
+
+
+function addNewName(){
+
+  const input =
+    document.getElementById(
+      "newName"
     );
 
-  let records = [];
+  const name =
+    input.value.trim();
+
+  if(!name){
+
+    alert("براہ کرم پہلے نام لکھیں۔");
+
+    return;
+
+  }
+
+  if(names.includes(name)){
+
+    alert("یہ نام پہلے سے موجود ہے۔");
+
+    return;
+
+  }
+
+  names.push(name);
+
+  saveNames();
+
+  currentIndex =
+    names.length - 1;
+
+  closeAddName();
+
+  renderNames();
+
+  loadRecord();
+
+}
+
+
+function deleteCurrentName(){
+
+  if(!names.length){
+
+    return;
+
+  }
+
+  const name =
+    names[currentIndex];
+
+  const confirmDelete =
+    confirm(
+      "کیا آپ واقعی " +
+      name +
+      " کو حذف کرنا چاہتے ہیں؟\n\nاس نام کا مقامی ریکارڈ بھی دوبارہ منتخب نہیں کیا جا سکے گا۔"
+    );
+
+  if(!confirmDelete){
+
+    return;
+
+  }
+
+  names.splice(
+    currentIndex,
+    1
+  );
+
+  if(currentIndex >= names.length){
+
+    currentIndex =
+      names.length - 1;
+
+  }
+
+  if(currentIndex < 0){
+
+    currentIndex = 0;
+
+  }
+
+  saveNames();
+
+  renderNames();
+
+  if(names.length){
+
+    loadRecord();
+
+  }else{
+
+    document.getElementById(
+      "currentName"
+    ).textContent =
+      "کوئی نام موجود نہیں";
+
+    prayers.forEach(p=>{
+
+      document.getElementById(p)
+        .classList.remove("done");
+
+    });
+
+    updateStats();
+
+    document.getElementById(
+      "history"
+    ).innerHTML =
+      '<div class="empty">ابھی کوئی نام موجود نہیں۔</div>';
+
+  }
+
+}
+
+
+function resetToday(){
+
+  if(!names.length){
+
+    return;
+
+  }
+
+  const ok =
+    confirm(
+      "کیا آپ آج کا پورا نماز ریکارڈ صاف کرنا چاہتے ہیں؟"
+    );
+
+  if(!ok){
+
+    return;
+
+  }
+
+  localStorage.removeItem(
+    storageKey()
+  );
+
+  loadRecord();
+
+}
+
+
+function renderHistory(){
+
+  const historyBox =
+    document.getElementById(
+      "history"
+    );
+
+  if(!names.length){
+
+    historyBox.innerHTML =
+      '<div class="empty">کوئی نام موجود نہیں۔</div>';
+
+    return;
+
+  }
+
+  const records = [];
+
+  const prefix =
+    "alhijr_prayer_" +
+    currentIndex +
+    "_";
 
   for(let i=0;i<localStorage.length;i++){
 
     const key =
       localStorage.key(i);
 
-    const prefix =
-      "alhijr_prayer_" +
-      selectedChild + "_";
-
-    if(key &&
-       key.startsWith(prefix)){
+    if(key && key.startsWith(prefix)){
 
       const date =
-        key.replace(prefix,"");
+        key.substring(
+          prefix.length
+        );
 
-      try{
+      const value =
+        JSON.parse(
+          localStorage.getItem(key)
+        );
 
-        const data =
-          JSON.parse(
-            localStorage.getItem(key)
-          );
+      const count =
+        prayers.filter(
+          p => value[p]
+        ).length;
 
-        let count = 0;
-
-        prayers.forEach(p=>{
-          if(data[p]) count++;
-        });
-
-        records.push({
-          date:date,
-          count:count
-        });
-
-      }catch(e){}
+      records.push({
+        date:date,
+        count:count
+      });
 
     }
 
   }
 
-
-  records.sort((a,b)=>
-    b.date.localeCompare(a.date)
+  records.sort(
+    (a,b)=>
+      b.date.localeCompare(a.date)
   );
 
+  const recent =
+    records.slice(0,15);
 
-  if(records.length === 0){
+  if(!recent.length){
 
-    box.innerHTML =
-      '<div style="text-align:center;color:#9fb0c7;">ابھی کوئی پچھلا ریکارڈ موجود نہیں</div>';
+    historyBox.innerHTML =
+      '<div class="empty">ابھی کوئی پچھلا ریکارڈ موجود نہیں۔</div>';
 
     return;
 
   }
 
+  historyBox.innerHTML =
+    recent.map(item=>{
 
-  box.innerHTML =
-    records.slice(0,15)
-    .map(item=>{
+      let status = "";
 
-      let color =
-        item.count === 5
-          ? "#22c55e"
-          : item.count >= 3
-          ? "#f5b942"
-          : "#ef4444";
+      if(item.count === 5){
+
+        status =
+          "🌟 ماشاءاللہ — مکمل";
+
+      }else{
+
+        status =
+          item.count +
+          "/5 نمازیں ادا";
+
+      }
 
       return `
         <div class="history-item">
-          <span>📅 ${formatDate(item.date)}</span>
-          <span class="history-score"
-                style="color:${color}">
-            ${item.count}/5 نمازیں
-          </span>
+          <b>📅 ${item.date}</b>
+          <br>
+          ${status}
         </div>
       `;
 
@@ -1048,77 +1030,42 @@ function loadHistory(){
 }
 
 
-/* ==========================================
-   FORMAT DATE
-========================================== */
-
-function formatDate(date){
-
-  const parts =
-    date.split("-");
-
-  return (
-    parts[2] + "-" +
-    parts[1] + "-" +
-    parts[0]
-  );
-
-}
-
-
-/* ==========================================
-   RESET TODAY
-========================================== */
-
-function resetToday(){
-
-  const name =
-    children[selectedChild];
-
-  const confirmReset =
-    confirm(
-      "کیا آپ " +
-      name +
-      " کے " +
-      formatDate(dateInput.value) +
-      " کا نماز ریکارڈ صاف کرنا چاہتے ہیں؟"
-    );
-
-  if(!confirmReset) return;
-
-  localStorage.removeItem(
-    getKey()
-  );
-
-  loadRecord();
-
-}
-
-
-/* ==========================================
-   PRINT REPORT
-========================================== */
-
-function printReport(){
-
-  const name =
-    children[selectedChild];
-
-  const date =
-    formatDate(
-      dateInput.value
-    );
-
-  window.print();
-
-}
-
-
-/* ==========================================
-   START
-========================================== */
-
+renderNames();
 loadRecord();
+
+
+// Modal کے باہر کلک کرنے سے بند
+document.getElementById(
+  "nameModal"
+).addEventListener(
+  "click",
+  function(e){
+
+    if(e.target === this){
+
+      closeAddName();
+
+    }
+
+  }
+);
+
+
+// Enter دبانے سے نام شامل
+document.getElementById(
+  "newName"
+).addEventListener(
+  "keydown",
+  function(e){
+
+    if(e.key === "Enter"){
+
+      addNewName();
+
+    }
+
+  }
+);
 
 </script>
 
